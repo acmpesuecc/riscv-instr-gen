@@ -74,21 +74,27 @@ class RV_instruction_generator:
             sys.exit(0)
 
     # Instruction generator function
+    
     def instr_gen(self):
-       ext = list(self.isa)[4:]
-       ext_list = list(ext)       # List of extensions
+       with open("txt.txt", "a") as file: 
+        ext = list(self.isa)[4:]
+        ext_list = list(ext)       # List of extensions
 
-       xlen = self.isa[2:4]       # XLEN -> 32, 64
+        xlen = self.isa[2:4]       # XLEN -> 32, 64
 
-       if len(ext_list) > 1:
-           for exten in ext_list:
-               pass
-       else:
-           for ext_i in i_list:
-               print(ext_i)
+        if len(ext_list) > 1:
+            for exten in ext_list:
+                pass
+        else:
+            for ext_i in i_list:
+                file.write(ext_i)
+                file.write("\n")
+        
        
        
 isa_test = "RV32I"
 r1 = RV_instruction_generator(isa_test)
 r1.isa_format_check()
 r1.instr_gen()
+
+
