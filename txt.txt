@@ -1,0 +1,15 @@
+
+auipc
+jal
+jalr
+branch
+load_32
+store_32
+imm_32
+shift_imm_32
+al_op_32
+load_64
+store_64
+shift_imm_64
+imm_64
+al_op_64
