@@ -9,7 +9,7 @@ import re
 
 # ------- Allowed lists -------
 list_bit_width = [32, 64]         # List of allowed bit widths
-list_extension = ["I", "A"]       # List of allowed extensions
+list_extension = ["I", "A","C"]       # List of allowed extensions
 
 # ------- Register file -------
 reg_file = []
@@ -38,6 +38,15 @@ i_ext_list = {
 
 i_list = ["lui", "auipc", "jal", "jalr", "branch", "load_32", "store_32", "imm_32",
           "shift_imm_32", "al_op_32", "load_64", "store_64", "shift_imm_64", "imm_64", "al_op_64"]
+
+c_ext_list = { 
+                "cl" : ["clw", "cld", "clq", "cflw", "cfld"]
+                "cs": ["csw", "csd", "csq", "cfsw", "cfsd"]
+                "cj" : ["cj", "cjal"]
+                "css" : ["cswsp", "csdsp", "csqsp", "cfswsp", "cfsdsp"]
+                "cb" : ["cbeqz", "cbnez"]
+            }
+c_list = ["cl","cs","cj","css","cb"]
 #i_list_32 = i_list_64[:10]
 
 # ------- Classes -------
@@ -86,6 +95,8 @@ class RV_instruction_generator:
        else:
            for ext_i in i_list:
                print(ext_i)
+            for ext_c in c_list: 
+                print(ext_c)
        
        
 isa_test = "RV32I"
