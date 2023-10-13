@@ -15,6 +15,8 @@ list_extension = ["I", "A"]       # List of allowed extensions
 reg_file = []
 for reg in range(0,32):
     reg_file.append("x"+str(reg)) # x0 - x31 (32 registers)
+    
+print(reg_file)
 
 
 # ------- Instructions dict -------

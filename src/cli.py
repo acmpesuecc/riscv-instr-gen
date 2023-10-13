@@ -26,7 +26,7 @@ def main():
                 functions = instr_generator.get_functions_by_category(category)
                 if functions:
                     random_function = random.choice(functions)
-                    print(f"{category}      :       {random_function}\n")
+                    print(f"{random_function}\n ")
 
 if __name__ == "__main__":
     main()
