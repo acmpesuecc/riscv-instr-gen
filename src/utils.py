@@ -9,7 +9,7 @@ import re
 
 # ------- Allowed lists -------
 list_bit_width = [32, 64]         # List of allowed bit widths
-list_extension = ["I", "A"]       # List of allowed extensions
+list_extension = ["I", "A","C", "M"]       # List of allowed extensions
 
 # ------- Register file -------
 reg_file = []
