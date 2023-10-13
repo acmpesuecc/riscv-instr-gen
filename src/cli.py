@@ -7,18 +7,16 @@
 import os
 import click
 import sys
-# Import the argparse module
+
 import argparse
 
-# ... (rest of your code) ...
-
-# Create a function to generate instructions based on the ISA
+# Function to generate instructions based on the 
 def generate_instructions(isa):
     r1 = RV_instruction_generator(isa)
     r1.isa_format_check()
     r1.instr_gen()
 
-# Create the CLI parser
+# To create a CLI parser
 def create_parser():
     parser = argparse.ArgumentParser(description="RISC-V Instruction Generator")
     parser.add_argument(
