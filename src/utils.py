@@ -86,6 +86,25 @@ class RV_instruction_generator:
        else:
            for ext_i in i_list:
                print(ext_i)
+
+    def get_instructions_to_generate(self, num_instructions):
+        # Return a list of instruction categories to generate
+            if num_instructions <= len(i_list):
+                return i_list[:num_instructions]
+            else:
+                print(f"Warning: Only {len(i_list)} instructions available. Generating all instructions.")
+                return i_list
+
+    def get_functions_by_category(self, category):
+        # Return a list of functions in the specified category
+        if category in i_ext_list:
+            functions = i_ext_list[category]
+            if isinstance(functions, list):
+                return functions
+            else:
+                return [functions]
+        else:
+            return []
        
        
 isa_test = "RV32I"
