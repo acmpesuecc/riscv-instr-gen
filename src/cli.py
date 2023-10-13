@@ -11,8 +11,9 @@ import sys
 # CLI
 
 #!/usr/bin/env python
+
 import argparse
-from riscv_instr_gen.utils import RV_instruction_generator
+from utils import RV_instruction_generator
 
 def main():
     parser = argparse.ArgumentParser(description="RISC-V Instruction Generator CLI")
@@ -41,3 +42,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

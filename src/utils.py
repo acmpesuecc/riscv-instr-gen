@@ -107,7 +107,7 @@ class RV_instruction_generator:
             return []
        
        
-isa_test = "RV32I"
-r1 = RV_instruction_generator(isa_test)
-r1.isa_format_check()
-r1.instr_gen()
+# isa_test = "RV32I"
+# r1 = RV_instruction_generator(isa_test)
+# r1.isa_format_check()
+# r1.instr_gen()
