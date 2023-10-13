@@ -1,19 +1,6 @@
-#======================================================
-#	RISC-V Instruction Generator
-#	Testing your cores, sims and ems made simpler!
-#======================================================
-
-# Imports
-import os
-import click
-import sys
-
-# CLI
-
-#!/usr/bin/env python
-
 import argparse
-from utils import RV_instruction_generator
+import random
+from utils import RV_instruction_generator  # Import the RV_instruction_generator from your utils.py
 
 def main():
     parser = argparse.ArgumentParser(description="RISC-V Instruction Generator CLI")
@@ -27,19 +14,19 @@ def main():
         if args.isa and args.number is not None:
             isa_format = args.isa
             num_instructions = args.number
-            
+
             instr_generator = RV_instruction_generator(isa_format)
             instr_generator.isa_format_check()
 
-            # Get the list of instruction categories to generate
-            instructions_to_generate = instr_generator.get_instructions_to_generate(num_instructions)
-            
-            for instruction in instructions_to_generate:
-                # Print the instruction category and its functions
-                category = instruction
+            # Get a list of categories to generate
+            categories_to_generate = instr_generator.get_instructions_to_generate(num_instructions)
+
+            for category in categories_to_generate:
+                # Get a random function from the category
                 functions = instr_generator.get_functions_by_category(category)
-                print(f"Category: {category}\nFunctions: {', '.join(functions)}\n")
+                if functions:
+                    random_function = random.choice(functions)
+                    print(f"{category}      :       {random_function}\n")
 
 if __name__ == "__main__":
     main()
-
